@@ -208,9 +208,18 @@ a:focus-visible {
 /* ─── Main content ─── */
 
 .bio p {
-  margin: 0 0 12px;
+  margin: 0 0 14px;
   font-size: 1.02rem;
   color: var(--text);
+}
+.bio p:last-child { margin-bottom: 0; }
+
+.bio-lead {
+  font-size: 1.2rem !important;
+  line-height: 1.45;
+  font-weight: 500;
+  color: var(--text-strong);
+  margin-bottom: 18px !important;
 }
 
 /* Highlighted phrases in body prose (skills, role, degree) — orange = important */
