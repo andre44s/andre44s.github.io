@@ -1,45 +1,62 @@
 :root {
-  --bg: #f6f1ea;
-  --panel: rgba(255, 255, 255, 0.8);
-  --panel-strong: #fffdf9;
-  --text: #1f1b18;
-  --muted: #645b53;
-  --border: #e7ddd3;
-  --accent: #8b5e34;
-  --accent-soft: #f4e8d8;
-  --shadow: 0 18px 40px rgba(72, 50, 32, 0.08);
-  --max-width: 1120px;
+  --bg: #1a1a1a;
+  --bg-soft: #222222;
+  --text: #d4d4d4;
+  --text-strong: #ededed;
+  --text-muted: #888888;
+  --accent: #c97f4a;
+  --accent-hover: #e09660;
+  --rule: #2a2a2a;
+  --max-width: 1080px;
+  --sidebar-width: 260px;
+  --gap: 56px;
 }
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
+
 body {
   margin: 0;
-  background:
-    radial-gradient(circle at top left, #fbf6f0 0%, transparent 30%),
-    linear-gradient(180deg, #f8f4ef 0%, #f3ede5 100%);
+  background: var(--bg);
   color: var(--text);
-  font-family: "Inter", system-ui, sans-serif;
-  line-height: 1.7;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
   color: var(--accent);
   text-decoration: none;
+  transition: color 0.15s ease;
+}
+a:hover { color: var(--accent-hover); text-decoration: underline; }
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
 }
 
-a:hover { text-decoration: underline; }
-
-.page-shell {
-  padding: 44px 20px 80px;
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
+
+/* ─── Layout ─── */
 
 .page {
   max-width: var(--max-width);
   margin: 0 auto;
+  padding: clamp(28px, 4vw, 56px) clamp(20px, 4vw, 56px) clamp(48px, 6vw, 80px);
   display: grid;
-  grid-template-columns: 300px minmax(0, 1fr);
-  gap: 42px;
+  grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
+  gap: var(--gap);
 }
 
 .sidebar {
@@ -48,207 +65,459 @@ a:hover { text-decoration: underline; }
   top: 28px;
 }
 
-.profile-card {
-  background: var(--panel);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255,255,255,0.7);
-  box-shadow: var(--shadow);
-  border-radius: 28px;
-  padding: 28px;
-}
-
-.profile-photo {
-  width: 210px;
-  height: 210px;
-  margin: 0 auto 22px;
-  border-radius: 24px;
-  border: 1px solid var(--border);
-  background: linear-gradient(135deg, #efe5d8, #f9f5ef);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--muted);
-  font-size: 0.95rem;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.8);
-}
-
-.sidebar h1 {
-  font-size: 2rem;
-  line-height: 1.08;
-  margin: 0 0 10px;
-  letter-spacing: -0.03em;
-}
-
-.role {
-  margin: 0 0 6px;
-  font-weight: 700;
-  color: var(--accent);
-}
-
-.affiliation {
-  margin: 0 0 20px;
-  color: var(--muted);
-  font-size: 0.98rem;
-}
-
-.info-block {
-  padding: 14px 0 8px;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  margin-bottom: 18px;
-}
-
-.info-block p {
-  margin: 0 0 12px;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.info-block strong {
-  font-size: 0.78rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--muted);
-}
-
-.link-group {
-  display: grid;
-  gap: 10px;
-}
-
-.link-group a {
-  display: block;
-  padding: 10px 14px;
-  border-radius: 14px;
-  background: var(--panel-strong);
-  border: 1px solid var(--border);
-  transition: transform 0.15s ease, background 0.15s ease;
-}
-
-.link-group a:hover {
-  text-decoration: none;
-  transform: translateY(-1px);
-  background: #fff8ef;
-}
-
 .content {
   display: flex;
   flex-direction: column;
-  gap: 22px;
+  gap: clamp(28px, 4vw, 40px);
+  min-width: 0;
 }
 
-.content section {
-  background: var(--panel);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255,255,255,0.7);
-  box-shadow: var(--shadow);
-  border-radius: 28px;
-  padding: 28px 30px;
+/* ─── Sidebar ─── */
+
+/* Photo is a direct link (easter egg → Instagram). Hover lift gives the cue
+   that it's clickable. */
+.photo-link {
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+  border-radius: 18px;
+  transition: transform 0.28s ease-out, box-shadow 0.28s ease-out;
 }
 
-.hero {
-  padding-top: 34px;
-  padding-bottom: 34px;
+.photo-link:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
 }
 
-.eyebrow {
-  margin: 0 0 10px;
+.photo {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 18px;
+  border: 1px solid var(--bg-soft);
+  object-fit: cover;
+  display: block;
+}
+
+.name {
+  margin: 0 0 4px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-strong);
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+
+.role {
+  margin: 0 0 2px;
+  font-size: 0.92rem;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.role-cursor {
+  display: inline-block;
+  margin-left: 1px;
   color: var(--accent);
-  font-size: 0.78rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
+  font-weight: 400;
+  animation: blink 1s steps(2) infinite;
 }
 
-.hero h2 {
-  margin: 0 0 14px;
-  font-size: clamp(2rem, 4vw, 3rem);
-  line-height: 1.05;
-  letter-spacing: -0.04em;
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
 }
 
-.lead {
+@media (prefers-reduced-motion: reduce) {
+  .role-cursor { animation: none; opacity: 0.6; }
+}
+
+.affiliations {
+  list-style: none;
+  margin: 0 0 20px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.affiliations li {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  line-height: 1.35;
+}
+
+.affiliations .ico-emoji {
+  font-size: 0.85rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.contact {
+  list-style: none;
   margin: 0;
-  font-size: 1.08rem;
-  color: var(--muted);
-  max-width: 760px;
+  padding: 18px 0 0;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 0.92rem;
 }
 
-.content h3 {
-  margin: 0 0 16px;
-  font-size: 1.35rem;
-  letter-spacing: -0.02em;
+.contact li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 28px;
 }
 
-.content p:last-child,
-.content ul:last-child { margin-bottom: 0; }
+/* Contact: each <li> is a row. Link items wrap icon + text in <a> so the
+   hover/click area is the content itself (not empty row space). The static
+   Bali row keeps a plain span structure and has no hover. */
 
-.stack-list,
-.simple-list {
+.contact a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.contact a:hover { color: var(--accent); }
+.contact a:hover .ico { color: var(--accent); }
+
+.contact .ico {
+  display: inline-flex;
+  width: 18px;
+  height: 18px;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  transition: color 0.15s ease;
+}
+
+.contact .ico svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ─── Main content ─── */
+
+.bio p {
+  margin: 0 0 12px;
+  font-size: 1.02rem;
+  color: var(--text);
+}
+
+/* Highlighted phrases in body prose (skills, role, degree) — orange = important */
+.hl {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.section-h {
+  margin: 0 0 14px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-strong);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--rule);
+  letter-spacing: -0.005em;
+}
+
+.section-h .emoji {
+  font-size: 1.05rem;
+  line-height: 1;
+}
+
+/* News */
+
+.news {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.news li {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 16px;
+  padding: 6px 0;
+  color: var(--text);
+}
+
+.news .date {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.news .body {
+  font-size: 0.97rem;
+}
+
+/* Experience / Education */
+
+.job, .edu-entry {
+  margin-bottom: 22px;
+}
+.job:last-child, .edu-entry:last-child { margin-bottom: 0; }
+
+.job-title {
+  margin: 0 0 2px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-strong);
+}
+
+.job-title a {
+  color: var(--text-strong);
+  border-bottom: 1px dotted var(--text-muted);
+}
+.job-title a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+  text-decoration: none;
+}
+
+.job-role {
+  font-weight: 400;
+  color: var(--text);
+}
+
+.meta {
+  margin: 0 0 8px;
+  font-size: 0.87rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.job ul {
   margin: 0;
   padding-left: 20px;
+  font-size: 0.95rem;
+}
+.job ul li {
+  margin-bottom: 4px;
+  color: var(--text);
 }
 
-.stack-list li + li,
-.simple-list li + li { margin-top: 12px; }
+/* CV-style education entries: bold school + right-aligned date,
+   italic degree title, bullet list below. Supports one school with
+   multiple degrees nested underneath. */
 
-.news-list {
-  list-style: none;
-  padding-left: 0;
-}
-
-.news-list li {
-  display: grid;
-  grid-template-columns: 92px 1fr;
+.edu-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
   gap: 16px;
-  padding: 12px 0;
-  border-top: 1px solid var(--border);
+  margin-bottom: 8px;
 }
 
-.news-list li:first-child { border-top: 0; padding-top: 0; }
-.news-list .date {
-  color: var(--muted);
-  font-size: 0.92rem;
+.edu-school {
+  margin: 0;
+  font-size: 1rem;
   font-weight: 600;
+  color: var(--text-strong);
 }
 
-.publication-list li {
-  padding: 14px 0;
-  border-top: 1px solid var(--border);
+.edu-school a {
+  color: inherit;
+  border-bottom: 1px dotted var(--text-muted);
 }
-.publication-list li:first-child { border-top: 0; padding-top: 0; }
-.publication-list p {
-  margin: 4px 0 0;
-  color: var(--muted);
-}
-
-.two-col {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 22px;
+.edu-school a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+  text-decoration: none;
 }
 
-@media (max-width: 920px) {
+.edu-date {
+  font-size: 0.87rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.edu-degree + .edu-degree {
+  margin-top: 14px;
+}
+
+.edu-degree-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 4px;
+}
+
+.edu-degree-title {
+  margin: 0 0 6px;
+  font-size: 0.95rem;
+  color: var(--text);
+  font-style: italic;
+}
+
+.edu-degree-head .edu-degree-title {
+  margin: 0;
+}
+
+.edu-text {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.edu-text strong {
+  color: var(--text-strong);
+}
+
+/* Open for collaboration paragraph */
+section:last-child p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* ─── Responsive ─── */
+
+/* Tablet: collapse to single column, sidebar becomes a centered profile card */
+@media (max-width: 959px) {
   .page {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 36px;
+    max-width: 680px;
+    justify-items: center;
   }
 
   .sidebar {
     position: static;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 320px;
   }
 
-  .profile-card {
-    max-width: 560px;
-    margin: 0 auto;
+  .photo {
+    margin-bottom: 18px;
+    /* width:100% + aspect-ratio:1 from base — fills the 320px sidebar */
   }
+
+  .name, .role { text-align: center; }
+  .affiliations { align-items: center; margin-bottom: 22px; }
+
+  .content {
+    width: 100%;
+    max-width: 680px;
+  }
+
+  /* Contact becomes a horizontal chip row */
+  .contact {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    padding: 18px 0 0;
+    width: 100%;
+    border-top: 1px solid var(--rule);
+    font-size: 0.88rem;
+  }
+
+  .contact li {
+    background: var(--bg-soft);
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    padding: 0;
+    min-height: 0;
+    transition: border-color 0.15s ease, background 0.15s ease;
+  }
+
+  /* Link chips: the <a> fills the chip so the whole pill is clickable */
+  .contact li:has(a) { transition: border-color 0.15s ease, background 0.15s ease; }
+  .contact li:has(a):hover {
+    border-color: var(--accent);
+    background: #262626;
+  }
+
+  .contact a {
+    display: flex;
+    width: 100%;
+    padding: 8px 14px;
+    gap: 8px;
+  }
+
+  .contact .ico { width: 16px; height: 16px; }
+  .contact .ico svg { width: 14px; height: 14px; }
 }
 
-@media (max-width: 700px) {
-  .page-shell { padding: 20px 14px 48px; }
-  .content section, .profile-card { border-radius: 22px; padding: 22px; }
-  .two-col { grid-template-columns: 1fr; }
-  .news-list li { grid-template-columns: 1fr; gap: 6px; }
-  .profile-photo { width: 180px; height: 180px; }
+/* Phone: tighter padding, smaller sidebar card */
+@media (max-width: 639px) {
+  body { font-size: 15px; }
+
+  .page {
+    padding: 32px 18px 48px;
+    gap: 32px;
+  }
+
+  .sidebar { max-width: 260px; }
+
+  .photo {
+    margin-bottom: 14px;
+    border-radius: 16px;
+  }
+
+  .name {
+    font-size: 1.32rem;
+    margin-bottom: 6px;
+  }
+  .role { font-size: 0.98rem; }
+  .affiliations { font-size: 0.84rem; margin-bottom: 18px; }
+
+  .contact {
+    padding-top: 16px;
+    font-size: 0.85rem;
+  }
+  .contact li { padding: 7px 12px; }
+
+  .section-h { font-size: 1.08rem; }
+
+  .news li {
+    grid-template-columns: 1fr;
+    gap: 4px;
+    padding: 12px 0;
+    border-top: 1px solid var(--rule);
+  }
+  .news li:first-child {
+    padding-top: 0;
+    border-top: 0;
+  }
+
+  .bio p { font-size: 0.97rem; }
+  .job ul { font-size: 0.93rem; padding-left: 18px; }
+  .job ul li { margin-bottom: 6px; }
+}
+
+/* Very narrow phones */
+@media (max-width: 380px) {
+  .page { padding: 24px 14px 40px; }
+  .sidebar { max-width: 220px; }
+  .name { font-size: 1.22rem; }
+}
+
+/* Honour reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+  .photo-link:hover { transform: none; box-shadow: none; }
 }

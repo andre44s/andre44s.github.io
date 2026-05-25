@@ -1,0 +1,6 @@
+# Brainstorming artifacts from Claude Code sessions
+.superpowers/
+
+# OS junk
+.DS_Store
+Thumbs.db
