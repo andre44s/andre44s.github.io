@@ -1,11 +1,20 @@
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('fonts/inter.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 :root {
   --bg: #1a1a1a;
   --bg-soft: #222222;
   --text: #d4d4d4;
   --text-strong: #ededed;
   --text-muted: #888888;
-  --accent: #c97f4a;
-  --accent-hover: #e09660;
+  --accent: #7896c6;
+  --accent-hover: #93accb;
   --rule: #2a2a2a;
   --max-width: 1080px;
   --sidebar-width: 260px;
@@ -48,8 +57,6 @@ a:focus-visible {
   border: 0;
 }
 
-/* ─── Layout ─── */
-
 .page {
   max-width: var(--max-width);
   margin: 0 auto;
@@ -72,16 +79,21 @@ a:focus-visible {
   min-width: 0;
 }
 
-/* ─── Sidebar ─── */
-
-/* Photo is a direct link (easter egg → Instagram). Hover lift gives the cue
-   that it's clickable. */
 .photo-link {
   display: block;
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 14px;
   border-radius: 18px;
   transition: transform 0.28s ease-out, box-shadow 0.28s ease-out;
+}
+
+.sidebar-name {
+  margin: 0 0 10px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-strong);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
 }
 
 .photo-link:hover {
@@ -107,14 +119,57 @@ a:focus-visible {
   line-height: 1.25;
 }
 
-/* ─── Banner / hero ─── */
 .banner {
+  position: relative;
+  overflow: hidden;
   background: linear-gradient(180deg, #232323 0%, #1e1e1e 100%);
   border-bottom: 1px solid var(--rule);
-  padding: clamp(80px, 13vw, 150px) clamp(20px, 4vw, 56px) clamp(64px, 9vw, 110px);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: clamp(40px, 6vw, 80px) clamp(20px, 4vw, 56px);
+}
+
+.banner-chevron {
+  position: absolute;
+  bottom: 36px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--text-muted);
+  font-size: 1.4rem;
+  text-decoration: none;
+  opacity: 0.7;
+  transition: opacity 0.2s ease, color 0.2s ease;
+  animation: chevron-bounce 2.2s ease-in-out infinite;
+}
+.banner-chevron:hover {
+  opacity: 1;
+  color: var(--accent);
+  text-decoration: none;
+}
+@keyframes chevron-bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%      { transform: translateX(-50%) translateY(7px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .banner-chevron { animation: none; }
+}
+
+.banner-net {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
 }
 
 .banner-inner {
+  position: relative;
+  z-index: 1;
   max-width: var(--max-width);
   margin: 0 auto;
   text-align: center;
@@ -247,10 +302,6 @@ a:focus-visible {
   min-height: 28px;
 }
 
-/* Contact: each <li> is a row. Link items wrap icon + text in <a> so the
-   hover/click area is the content itself (not empty row space). The static
-   Bali row keeps a plain span structure and has no hover. */
-
 .contact a {
   display: inline-flex;
   align-items: center;
@@ -279,15 +330,12 @@ a:focus-visible {
   height: 16px;
 }
 
-/* ─── Main content ─── */
-
 .bio p {
   margin: 0 0 12px;
   font-size: 1.02rem;
   color: var(--text);
 }
 
-/* Highlighted phrases in body prose (skills, role, degree) — orange = important */
 .hl {
   color: var(--accent);
   font-weight: 500;
@@ -310,8 +358,6 @@ a:focus-visible {
   font-size: 1.05rem;
   line-height: 1;
 }
-
-/* News */
 
 .news {
   list-style: none;
@@ -338,55 +384,9 @@ a:focus-visible {
   font-size: 0.97rem;
 }
 
-/* Experience / Education */
-
 .job, .edu-entry {
   margin-bottom: 22px;
 }
-.job:last-child, .edu-entry:last-child { margin-bottom: 0; }
-
-.job-title {
-  margin: 0 0 2px;
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--text-strong);
-}
-
-.job-title a {
-  color: var(--text-strong);
-  border-bottom: 1px dotted var(--text-muted);
-}
-.job-title a:hover {
-  color: var(--accent);
-  border-bottom-color: var(--accent);
-  text-decoration: none;
-}
-
-.job-role {
-  font-weight: 400;
-  color: var(--text);
-}
-
-.meta {
-  margin: 0 0 8px;
-  font-size: 0.87rem;
-  color: var(--text-muted);
-  font-style: italic;
-}
-
-.job ul {
-  margin: 0;
-  padding-left: 20px;
-  font-size: 0.95rem;
-}
-.job ul li {
-  margin-bottom: 4px;
-  color: var(--text);
-}
-
-/* CV-style education entries: bold school + right-aligned date,
-   italic degree title, bullet list below. Supports one school with
-   multiple degrees nested underneath. */
 
 .edu-head {
   display: flex;
@@ -396,65 +396,6 @@ a:focus-visible {
   margin-bottom: 8px;
 }
 
-.edu-school {
-  margin: 0;
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--text-strong);
-}
-
-.edu-school a {
-  color: inherit;
-  border-bottom: 1px dotted var(--text-muted);
-}
-.edu-school a:hover {
-  color: var(--accent);
-  border-bottom-color: var(--accent);
-  text-decoration: none;
-}
-
-.edu-date {
-  font-size: 0.87rem;
-  color: var(--text-muted);
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-
-.edu-degree + .edu-degree {
-  margin-top: 14px;
-}
-
-.edu-degree-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 16px;
-  margin-bottom: 4px;
-}
-
-.edu-degree-title {
-  margin: 0 0 6px;
-  font-size: 0.95rem;
-  color: var(--text);
-  font-style: italic;
-}
-
-.edu-degree-head .edu-degree-title {
-  margin: 0;
-}
-
-.edu-text {
-  margin: 0;
-  font-size: 0.92rem;
-  color: var(--text-muted);
-  line-height: 1.6;
-}
-
-.edu-text strong {
-  color: var(--text-strong);
-}
-
-/* Projects */
 .project {
   margin-bottom: 18px;
 }
@@ -484,7 +425,6 @@ a:focus-visible {
   line-height: 1.6;
 }
 
-/* Empty-section placeholder */
 .placeholder {
   margin: 0;
   color: var(--text-muted);
@@ -492,74 +432,172 @@ a:focus-visible {
   font-size: 0.95rem;
 }
 
-/* GitHub recent activity widget */
-.activity-list {
-  list-style: none;
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
   margin: 0;
-  padding: 0;
 }
 
-.activity-list li {
-  padding: 10px 0;
-  border-top: 1px solid var(--rule);
-}
-.activity-list li:first-child {
-  border-top: 0;
-  padding-top: 0;
-}
-
-.activity-list a {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  gap: 12px;
-  align-items: baseline;
-  color: var(--text);
-  text-decoration: none;
-  font-size: 0.92rem;
-  transition: color 0.15s ease;
-}
-.activity-list a:hover { color: var(--accent); }
-.activity-list a:hover .activity-msg { color: var(--accent); }
-
-.activity-repo {
-  color: var(--accent);
-  font-family: ui-monospace, "SF Mono", Menlo, monospace;
-  font-size: 0.82em;
-  white-space: nowrap;
-}
-
-.activity-msg {
-  color: var(--text);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  min-width: 0;
-  transition: color 0.15s ease;
-}
-
-.activity-time {
+.tag {
+  display: inline-block;
+  padding: 4px 11px;
+  background: var(--bg-soft);
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  font-size: 0.78rem;
   color: var(--text-muted);
-  font-size: 0.82em;
-  white-space: nowrap;
+  line-height: 1.4;
+  text-decoration: none;
+  transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
 }
+
+a.tag:hover {
+  background: rgba(120, 150, 198, 0.12);
+  border-color: var(--accent);
+  color: var(--text-strong);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(120, 150, 198, 0.15);
+  text-decoration: none;
+}
+
+.project-desc { margin-bottom: 8px; }
+.project .tags { margin-top: 4px; }
+
+.skill-hint {
+  margin: 0 0 16px;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-style: italic;
+}
+.skill-group { margin-bottom: 14px; }
+.skill-group:last-child { margin-bottom: 0; }
+.skill-label {
+  margin: 0 0 6px;
+  color: var(--text-strong);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 27px;
+  top: 18px;
+  bottom: 18px;
+  width: 1px;
+  background: var(--rule);
+  z-index: 0;
+}
+
+.timeline-row {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 18px;
+  align-items: start;
+}
+
+.timeline-logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 10px;
+  background: var(--bg-soft);
+  border: 1px solid var(--rule);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+.timeline-logo:hover {
+  transform: scale(1.04);
+  border-color: var(--accent);
+}
+.timeline-logo img {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+}
+
+.timeline-content {
+  min-width: 0;
+  padding-top: 2px;
+}
+
+.timeline-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 2px;
+  flex-wrap: wrap;
+}
+
+.timeline-title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-strong);
+}
+
+.timeline-date {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  flex-shrink: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.timeline-subtitle {
+  margin: 0 0 6px;
+  font-size: 0.93rem;
+  color: var(--text);
+  font-style: italic;
+}
+
+.timeline-text {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+.timeline-text strong { color: var(--text-strong); }
+
+.timeline-bullets {
+  margin: 4px 0 0;
+  padding-left: 18px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+.timeline-bullets li { margin-bottom: 4px; }
+.timeline-bullets li:last-child { margin-bottom: 0; }
 
 @media (max-width: 639px) {
-  .activity-list a {
-    grid-template-columns: 1fr;
-    gap: 3px;
+  .timeline::before { display: none; }
+  .timeline-row {
+    grid-template-columns: 48px 1fr;
+    gap: 14px;
   }
-  .activity-msg { white-space: normal; }
+  .timeline-logo { width: 48px; height: 48px; }
+  .timeline-date { font-size: 0.8rem; }
 }
 
-/* Open for collaboration paragraph */
 section:last-child p {
   margin: 0;
   font-size: 1rem;
 }
 
-/* ─── Responsive ─── */
-
-/* Tablet: collapse to single column, sidebar becomes a centered profile card */
 @media (max-width: 959px) {
   .page {
     grid-template-columns: 1fr;
@@ -580,7 +618,7 @@ section:last-child p {
 
   .photo {
     margin-bottom: 18px;
-    /* width:100% + aspect-ratio:1 from base — fills the 320px sidebar */
+    
   }
 
   .name, .role { text-align: center; }
@@ -591,7 +629,7 @@ section:last-child p {
     max-width: 680px;
   }
 
-  /* Contact becomes a horizontal chip row */
+  
   .contact {
     flex-direction: row;
     flex-wrap: wrap;
@@ -612,7 +650,7 @@ section:last-child p {
     transition: border-color 0.15s ease, background 0.15s ease;
   }
 
-  /* Link chips: the <a> fills the chip so the whole pill is clickable */
+  
   .contact li:has(a) { transition: border-color 0.15s ease, background 0.15s ease; }
   .contact li:has(a):hover {
     border-color: var(--accent);
@@ -630,7 +668,6 @@ section:last-child p {
   .contact .ico svg { width: 14px; height: 14px; }
 }
 
-/* Phone: tighter padding, smaller sidebar card */
 @media (max-width: 639px) {
   body { font-size: 15px; }
 
@@ -677,14 +714,25 @@ section:last-child p {
   .job ul li { margin-bottom: 6px; }
 }
 
-/* Very narrow phones */
 @media (max-width: 380px) {
   .page { padding: 24px 14px 40px; }
   .sidebar { max-width: 220px; }
   .name { font-size: 1.22rem; }
 }
 
-/* Honour reduced-motion */
+.site-footer {
+  text-align: center;
+  padding: 36px 24px 32px;
+  border-top: 1px solid var(--rule);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-top: 24px;
+}
+.site-footer p { margin: 0 0 4px; }
+.site-footer .footer-sub { font-size: 0.78rem; opacity: 0.75; }
+.site-footer a { color: var(--text-muted); }
+.site-footer a:hover { color: var(--accent); }
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     transition-duration: 0.01ms !important;

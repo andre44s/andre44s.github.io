@@ -4,30 +4,29 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Primary SEO -->
+  
   <title>Yohanes Andre Setiawan — AI/ML Engineer | Open for PhD 2027</title>
   <meta name="description" content="AI/ML Engineer working on LLMs, RAG, retrieval, and agentic AI. M.S. in CS (AI) from Georgia Tech, currently at Datamine, applying for PhD positions starting Fall 2027." />
   <meta name="author" content="Yohanes Andre Setiawan" />
   <link rel="canonical" href="https://andre44s.dev/" />
 
-  <!-- Open Graph (Facebook, LinkedIn, Slack) -->
+  
   <meta property="og:type" content="profile" />
   <meta property="og:title" content="Yohanes Andre Setiawan — AI/ML Engineer | Open for PhD 2027" />
   <meta property="og:description" content="AI/ML Engineer working on LLMs, RAG, retrieval, and agentic AI. M.S. from Georgia Tech, applying for PhD positions Fall 2027." />
   <meta property="og:url" content="https://andre44s.dev/" />
-  <meta property="og:image" content="https://andre44s.dev/photo.jpg" />
+  <meta property="og:image" content="https://andre44s.dev/photo.webp" />
   <meta property="og:image:alt" content="Yohanes Andre Setiawan, AI/ML Engineer" />
   <meta property="profile:first_name" content="Yohanes" />
   <meta property="profile:last_name" content="Setiawan" />
 
-  <!-- Twitter / X card -->
+  
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Yohanes Andre Setiawan — AI/ML Engineer | Open for PhD 2027" />
   <meta name="twitter:description" content="AI/ML Engineer working on LLMs, RAG, retrieval, and agentic AI. M.S. from Georgia Tech, applying for PhD positions Fall 2027." />
-  <meta name="twitter:image" content="https://andre44s.dev/photo.jpg" />
+  <meta name="twitter:image" content="https://andre44s.dev/photo.webp" />
 
-  <!-- JSON-LD: Person schema. Lets Google (and AI engines like ChatGPT,
-       Perplexity, Google AI Overviews) extract structured facts directly. -->
+  
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -35,7 +34,7 @@
     "name": "Yohanes Andre Setiawan",
     "alternateName": "Andre Setiawan",
     "url": "https://andre44s.dev/",
-    "image": "https://andre44s.dev/photo.jpg",
+    "image": "https://andre44s.dev/photo.webp",
     "email": "ysetiawan3@gatech.edu",
     "jobTitle": "Senior AI Engineer",
     "description": "AI/ML Engineer working on LLMs, agentic AI, RAG, retrieval, recommendation systems, and NLP. Currently at Datamine, M.S. from Georgia Institute of Technology, seeking PhD positions starting Fall 2027.",
@@ -84,15 +83,758 @@
     }
   }
   </script>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <link rel="stylesheet" href="styles.css" />
+  
+  <link rel="preload" as="image" href="photo.webp" fetchpriority="high">
+  <link rel="preload" as="font" href="fonts/inter.woff2" type="font/woff2" crossorigin>
+  <style>
+  @font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400 700;
+    font-display: swap;
+    src: url('fonts/inter.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  
+  :root {
+    --bg: #1a1a1a;
+    --bg-soft: #222222;
+    --text: #d4d4d4;
+    --text-strong: #ededed;
+    --text-muted: #888888;
+    --accent: #7896c6;
+    --accent-hover: #93accb;
+    --rule: #2a2a2a;
+    --max-width: 1080px;
+    --sidebar-width: 260px;
+    --gap: 56px;
+  }
+  
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+  a:hover { color: var(--accent-hover); text-decoration: underline; }
+  a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+  
+  .visually-hidden {
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  
+  .page {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: clamp(36px, 5vw, 56px) clamp(20px, 4vw, 56px) clamp(48px, 6vw, 80px);
+    display: grid;
+    grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
+    gap: var(--gap);
+  }
+  
+  .sidebar {
+    align-self: start;
+    position: sticky;
+    top: 28px;
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(28px, 4vw, 40px);
+    min-width: 0;
+  }
+  
+  .photo-link {
+    display: block;
+    width: 100%;
+    margin-bottom: 14px;
+    border-radius: 18px;
+    transition: transform 0.28s ease-out, box-shadow 0.28s ease-out;
+  }
+  
+  .sidebar-name {
+    margin: 0 0 10px;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-strong);
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+  }
+  
+  .photo-link:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+  }
+  
+  .photo {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 18px;
+    border: 1px solid var(--bg-soft);
+    object-fit: cover;
+    display: block;
+  }
+  
+  .name {
+    margin: 0 0 4px;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-strong);
+    letter-spacing: -0.01em;
+    line-height: 1.25;
+  }
+  
+  .banner {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(180deg, #232323 0%, #1e1e1e 100%);
+    border-bottom: 1px solid var(--rule);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: clamp(40px, 6vw, 80px) clamp(20px, 4vw, 56px);
+  }
+  
+  .banner-chevron {
+    position: absolute;
+    bottom: 36px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--text-muted);
+    font-size: 1.4rem;
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity 0.2s ease, color 0.2s ease;
+    animation: chevron-bounce 2.2s ease-in-out infinite;
+  }
+  .banner-chevron:hover {
+    opacity: 1;
+    color: var(--accent);
+    text-decoration: none;
+  }
+  @keyframes chevron-bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50%      { transform: translateX(-50%) translateY(7px); }
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .banner-chevron { animation: none; }
+  }
+  
+  .banner-net {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+  }
+  
+  .banner-inner {
+    position: relative;
+    z-index: 1;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .banner-name {
+    margin: 0 0 18px;
+    font-size: clamp(1.9rem, 5vw, 2.8rem);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    color: var(--text-strong);
+    line-height: 1.1;
+  }
+  
+  .banner-tagline {
+    margin: 0 auto 32px;
+    max-width: 760px;
+    font-size: clamp(0.98rem, 1.7vw, 1.15rem);
+    color: var(--text-muted);
+    line-height: 1.55;
+  }
+  
+  .banner-tagline .role-text {
+    color: var(--text);
+    font-weight: 500;
+  }
+  
+  .banner-sep {
+    margin: 0 8px;
+    color: var(--text-muted);
+    opacity: 0.6;
+  }
+  
+  .banner-sub { color: var(--text-muted); }
+  
+  .role-cursor {
+    display: inline-block;
+    margin-left: 1px;
+    color: var(--accent);
+    font-weight: 400;
+    animation: blink 1s steps(2) infinite;
+  }
+  
+  @keyframes blink {
+    0%, 50% { opacity: 1; }
+    50.01%, 100% { opacity: 0; }
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .role-cursor { animation: none; opacity: 0.6; }
+  }
+  
+  .banner-cta {
+    display: inline-block;
+    padding: 12px 24px;
+    border: 1px solid var(--accent);
+    border-radius: 999px;
+    color: var(--accent);
+    font-size: 0.98rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.18s ease, color 0.18s ease, transform 0.18s ease;
+  }
+  
+  .banner-cta:hover {
+    background: var(--accent);
+    color: var(--bg);
+    text-decoration: none;
+    transform: translateY(-1px);
+  }
+  
+  @media (max-width: 639px) {
+    .banner { padding: 56px 18px 44px; }
+    .banner-name { letter-spacing: -0.02em; }
+    .banner-tagline { font-size: 0.95rem; }
+  }
+  
+  .affiliations {
+    list-style: none;
+    margin: 0 0 20px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+  
+  .affiliations li {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    line-height: 1.35;
+  }
+  
+  .affiliations .ico-emoji {
+    font-size: 0.85rem;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  
+  .affiliation-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+  .affiliation-link:hover {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  
+  .contact {
+    list-style: none;
+    margin: 0;
+    padding: 18px 0 0;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 0.92rem;
+  }
+  
+  .contact li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 28px;
+  }
+  
+  .contact a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text);
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+  
+  .contact a:hover { color: var(--accent); }
+  .contact a:hover .ico { color: var(--accent); }
+  
+  .contact .ico {
+    display: inline-flex;
+    width: 18px;
+    height: 18px;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-muted);
+    flex-shrink: 0;
+    transition: color 0.15s ease;
+  }
+  
+  .contact .ico svg {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .bio p {
+    margin: 0 0 12px;
+    font-size: 1.02rem;
+    color: var(--text);
+  }
+  
+  .hl {
+    color: var(--accent);
+    font-weight: 500;
+  }
+  
+  .section-h {
+    margin: 0 0 14px;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text-strong);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--rule);
+    letter-spacing: -0.005em;
+  }
+  
+  .section-h .emoji {
+    font-size: 1.05rem;
+    line-height: 1;
+  }
+  
+  .news {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .news li {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 16px;
+    padding: 6px 0;
+    color: var(--text);
+  }
+  
+  .news .date {
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    font-weight: 500;
+    font-style: italic;
+  }
+  
+  .news .body {
+    font-size: 0.97rem;
+  }
+  
+  .job, .edu-entry {
+    margin-bottom: 22px;
+  }
+  
+  .edu-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 8px;
+  }
+  
+  .project {
+    margin-bottom: 18px;
+  }
+  .project:last-child { margin-bottom: 0; }
+  
+  .project-title {
+    margin: 0 0 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-strong);
+  }
+  
+  .project-title a {
+    color: inherit;
+    border-bottom: 1px dotted var(--text-muted);
+  }
+  .project-title a:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+    text-decoration: none;
+  }
+  
+  .project-desc {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.93rem;
+    line-height: 1.6;
+  }
+  
+  .placeholder {
+    margin: 0;
+    color: var(--text-muted);
+    font-style: italic;
+    font-size: 0.95rem;
+  }
+  
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 0;
+  }
+  
+  .tag {
+    display: inline-block;
+    padding: 4px 11px;
+    background: var(--bg-soft);
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+    text-decoration: none;
+    transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+  }
+  
+  a.tag:hover {
+    background: rgba(120, 150, 198, 0.12);
+    border-color: var(--accent);
+    color: var(--text-strong);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(120, 150, 198, 0.15);
+    text-decoration: none;
+  }
+  
+  .project-desc { margin-bottom: 8px; }
+  .project .tags { margin-top: 4px; }
+  
+  .skill-hint {
+    margin: 0 0 16px;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-style: italic;
+  }
+  .skill-group { margin-bottom: 14px; }
+  .skill-group:last-child { margin-bottom: 0; }
+  .skill-label {
+    margin: 0 0 6px;
+    color: var(--text-strong);
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+  
+  .timeline {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+  }
+  
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 27px;
+    top: 18px;
+    bottom: 18px;
+    width: 1px;
+    background: var(--rule);
+    z-index: 0;
+  }
+  
+  .timeline-row {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 18px;
+    align-items: start;
+  }
+  
+  .timeline-logo {
+    width: 56px;
+    height: 56px;
+    border-radius: 10px;
+    background: var(--bg-soft);
+    border: 1px solid var(--rule);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    flex-shrink: 0;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+  .timeline-logo:hover {
+    transform: scale(1.04);
+    border-color: var(--accent);
+  }
+  .timeline-logo img {
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+  }
+  
+  .timeline-content {
+    min-width: 0;
+    padding-top: 2px;
+  }
+  
+  .timeline-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 2px;
+    flex-wrap: wrap;
+  }
+  
+  .timeline-title {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-strong);
+  }
+  
+  .timeline-date {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+    flex-shrink: 0;
+    font-variant-numeric: tabular-nums;
+  }
+  
+  .timeline-subtitle {
+    margin: 0 0 6px;
+    font-size: 0.93rem;
+    color: var(--text);
+    font-style: italic;
+  }
+  
+  .timeline-text {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+  .timeline-text strong { color: var(--text-strong); }
+  
+  .timeline-bullets {
+    margin: 4px 0 0;
+    padding-left: 18px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+  .timeline-bullets li { margin-bottom: 4px; }
+  .timeline-bullets li:last-child { margin-bottom: 0; }
+  
+  @media (max-width: 639px) {
+    .timeline::before { display: none; }
+    .timeline-row {
+      grid-template-columns: 48px 1fr;
+      gap: 14px;
+    }
+    .timeline-logo { width: 48px; height: 48px; }
+    .timeline-date { font-size: 0.8rem; }
+  }
+  
+  section:last-child p {
+    margin: 0;
+    font-size: 1rem;
+  }
+  
+  @media (max-width: 959px) {
+    .page {
+      grid-template-columns: 1fr;
+      gap: 36px;
+      max-width: 680px;
+      justify-items: center;
+    }
+  
+    .sidebar {
+      position: static;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      max-width: 320px;
+    }
+  
+    .photo {
+      margin-bottom: 18px;
+      
+    }
+  
+    .name, .role { text-align: center; }
+    .affiliations { align-items: center; margin-bottom: 22px; }
+  
+    .content {
+      width: 100%;
+      max-width: 680px;
+    }
+  
+    
+    .contact {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      padding: 18px 0 0;
+      width: 100%;
+      border-top: 1px solid var(--rule);
+      font-size: 0.88rem;
+    }
+  
+    .contact li {
+      background: var(--bg-soft);
+      border: 1px solid var(--rule);
+      border-radius: 999px;
+      padding: 0;
+      min-height: 0;
+      transition: border-color 0.15s ease, background 0.15s ease;
+    }
+  
+    
+    .contact li:has(a) { transition: border-color 0.15s ease, background 0.15s ease; }
+    .contact li:has(a):hover {
+      border-color: var(--accent);
+      background: #262626;
+    }
+  
+    .contact a {
+      display: flex;
+      width: 100%;
+      padding: 8px 14px;
+      gap: 8px;
+    }
+  
+    .contact .ico { width: 16px; height: 16px; }
+    .contact .ico svg { width: 14px; height: 14px; }
+  }
+  
+  @media (max-width: 639px) {
+    body { font-size: 15px; }
+  
+    .page {
+      padding: 32px 18px 48px;
+      gap: 32px;
+    }
+  
+    .sidebar { max-width: 260px; }
+  
+    .photo {
+      margin-bottom: 14px;
+      border-radius: 16px;
+    }
+  
+    .name {
+      font-size: 1.32rem;
+      margin-bottom: 6px;
+    }
+    .role { font-size: 0.98rem; }
+    .affiliations { font-size: 0.84rem; margin-bottom: 18px; }
+  
+    .contact {
+      padding-top: 16px;
+      font-size: 0.85rem;
+    }
+    .contact li { padding: 7px 12px; }
+  
+    .section-h { font-size: 1.08rem; }
+  
+    .news li {
+      grid-template-columns: 1fr;
+      gap: 4px;
+      padding: 12px 0;
+      border-top: 1px solid var(--rule);
+    }
+    .news li:first-child {
+      padding-top: 0;
+      border-top: 0;
+    }
+  
+    .bio p { font-size: 0.97rem; }
+    .job ul { font-size: 0.93rem; padding-left: 18px; }
+    .job ul li { margin-bottom: 6px; }
+  }
+  
+  @media (max-width: 380px) {
+    .page { padding: 24px 14px 40px; }
+    .sidebar { max-width: 220px; }
+    .name { font-size: 1.22rem; }
+  }
+  
+  .site-footer {
+    text-align: center;
+    padding: 36px 24px 32px;
+    border-top: 1px solid var(--rule);
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-top: 24px;
+  }
+  .site-footer p { margin: 0 0 4px; }
+  .site-footer .footer-sub { font-size: 0.78rem; opacity: 0.75; }
+  .site-footer a { color: var(--text-muted); }
+  .site-footer a:hover { color: var(--accent); }
+  
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+    }
+    .photo-link:hover { transform: none; box-shadow: none; }
+  }
+  </style>
 </head>
 <body>
   <header class="banner">
+    <svg class="banner-net" viewBox="0 0 1000 380" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg>
     <div class="banner-inner">
       <h1 class="banner-name">Yohanes Andre Setiawan</h1>
       <p class="banner-tagline">
@@ -102,13 +844,15 @@
       </p>
       <a class="banner-cta" href="cv.pdf" download>↓ Download CV</a>
     </div>
+    <a class="banner-chevron" href="#main" aria-label="Scroll to content">↓</a>
   </header>
 
-  <div class="page">
+  <div class="page" id="main">
     <aside class="sidebar">
       <a class="photo-link" href="https://www.instagram.com/andre44s.dev" target="_blank" rel="noopener" aria-label="Open Instagram">
-        <img class="photo" src="photo.jpg" alt="Yohanes Andre Setiawan, AI/ML Engineer at Datamine" width="240" height="240" />
+        <img class="photo" src="photo.webp" alt="Yohanes Andre Setiawan, AI/ML Engineer at Datamine" width="240" height="240" />
       </a>
+      <p class="sidebar-name">Yohanes Andre Setiawan</p>
       <ul class="affiliations" aria-label="Affiliations">
         <li><span class="ico-emoji" aria-hidden="true">💼</span> Datamine</li>
         <li><span class="ico-emoji" aria-hidden="true">🎓</span> Georgia Institute of Technology</li>
@@ -138,6 +882,12 @@
           <a href="https://www.linkedin.com/in/andre44s/" target="_blank" rel="noopener">
             <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></span>
             <span>LinkedIn</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://orcid.org/0009-0009-6490-4600" target="_blank" rel="noopener">
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="17"/><circle cx="12" cy="6" r="0.5" fill="currentColor"/><path d="M16 12c0 2.8-1.8 5-4 5"/></svg></span>
+            <span>ORCID</span>
           </a>
         </li>
         <li>
@@ -177,98 +927,119 @@
       <section>
         <h2 class="section-h"><span class="emoji" aria-hidden="true">💼</span> Experience</h2>
 
-        <article class="job">
-          <h3 class="job-title">
-            <a href="https://dataminesoftware.com/" target="_blank" rel="noopener">Datamine</a>
-            <span class="job-role">— Senior AI Engineer</span>
-          </h3>
-          <p class="meta">Jan 2025 – Present</p>
-          <ul>
-            <li>Engineer an LLM-powered RAG system (vector search + retrieval) for semantic search over product docs to replace keyword search.</li>
-            <li>Develop an MCP-based agent to automate multi-step workflows and reduce manual effort.</li>
-            <li>Design a multi-agent system that generates proprietary code to accelerate the SDLC.</li>
-            <li>Architect Azure CI/CD and MLOps for deployment/inference of AI services in production.</li>
-            <li>Integrate AI services into C#/.NET and REST APIs for production use.</li>
-          </ul>
-        </article>
+        <div class="timeline">
+          <article class="timeline-row">
+            <a class="timeline-logo" href="https://dataminesoftware.com/" target="_blank" rel="noopener" aria-label="Datamine">
+              <img src="logos/datamine.webp" alt="" width="56" height="56" loading="lazy" />
+            </a>
+            <div class="timeline-content">
+              <header class="timeline-head">
+                <h3 class="timeline-title">Datamine</h3>
+                <span class="timeline-date">Jan 2025 – Present</span>
+              </header>
+              <p class="timeline-subtitle">Senior AI Engineer</p>
+              <ul class="timeline-bullets">
+                <li>Engineer an LLM-powered RAG system (vector search + retrieval) for semantic search over product docs to replace keyword search.</li>
+                <li>Develop an MCP-based agent to automate multi-step workflows and reduce manual effort.</li>
+                <li>Design a multi-agent system that generates proprietary code to accelerate the SDLC.</li>
+                <li>Architect Azure CI/CD and MLOps for deployment/inference of AI services in production.</li>
+                <li>Integrate AI services into C#/.NET and REST APIs for production use.</li>
+              </ul>
+            </div>
+          </article>
 
-        <article class="job">
-          <h3 class="job-title">
-            <a href="https://tokopedia.com" target="_blank" rel="noopener">Tokopedia</a>
-            <span class="job-role">— Data Scientist</span>
-          </h3>
-          <p class="meta">Oct 2023 – Dec 2024</p>
-          <ul>
-            <li>Implemented a two-tower retrieval/ranking model to improve recommendation.</li>
-            <li>Engineered product deduplication and feed diversification using clustering algorithms.</li>
-            <li>Integrated user negative-feedback into the recommender to reduce irrelevant results.</li>
-            <li>Improved age prediction accuracy by 5% using ensemble techniques, with an 80% reduction in feature reliance.</li>
-            <li>Built Airflow DAGs orchestrating C++ components for training and deployment.</li>
-          </ul>
-        </article>
+          <article class="timeline-row">
+            <a class="timeline-logo" href="https://tokopedia.com" target="_blank" rel="noopener" aria-label="Tokopedia">
+              <img src="logos/tokopedia.webp" alt="" width="56" height="56" loading="lazy" />
+            </a>
+            <div class="timeline-content">
+              <header class="timeline-head">
+                <h3 class="timeline-title">Tokopedia</h3>
+                <span class="timeline-date">Oct 2023 – Dec 2024</span>
+              </header>
+              <p class="timeline-subtitle">Data Scientist</p>
+              <ul class="timeline-bullets">
+                <li>Implemented a two-tower retrieval/ranking model to improve recommendation.</li>
+                <li>Engineered product deduplication and feed diversification using clustering algorithms.</li>
+                <li>Integrated user negative-feedback into the recommender to reduce irrelevant results.</li>
+                <li>Improved age prediction accuracy by 5% using ensemble techniques, with an 80% reduction in feature reliance.</li>
+                <li>Built Airflow DAGs orchestrating C++ components for training and deployment.</li>
+              </ul>
+            </div>
+          </article>
 
-        <article class="job">
-          <h3 class="job-title">
-            <a href="https://colearn.id/" target="_blank" rel="noopener">CoLearn</a>
-            <span class="job-role">— Data Scientist</span>
-          </h3>
-          <p class="meta">Sep 2021 – Oct 2023</p>
-          <ul>
-            <li>Designed a recommender system using PyTorch transformers and FastAPI for personalized video delivery.</li>
-            <li>Built PoCs with OCR, NLP, and LLM prompting for a student teaching assistant.</li>
-            <li>Created GenAI/LLM solutions (RAG/retrieval, evaluation) using LangChain and Hugging Face.</li>
-          </ul>
-        </article>
+          <article class="timeline-row">
+            <a class="timeline-logo" href="https://colearn.id/" target="_blank" rel="noopener" aria-label="CoLearn">
+              <img src="logos/colearn.webp" alt="" width="56" height="56" loading="lazy" />
+            </a>
+            <div class="timeline-content">
+              <header class="timeline-head">
+                <h3 class="timeline-title">CoLearn</h3>
+                <span class="timeline-date">Sep 2021 – Oct 2023</span>
+              </header>
+              <p class="timeline-subtitle">Data Scientist</p>
+              <ul class="timeline-bullets">
+                <li>Designed a recommender system using PyTorch transformers and FastAPI for personalized video delivery.</li>
+                <li>Built PoCs with OCR, NLP, and LLM prompting for a student teaching assistant.</li>
+                <li>Created GenAI/LLM solutions (RAG/retrieval, evaluation) using LangChain and Hugging Face.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
       </section>
 
       <section>
         <h2 class="section-h"><span class="emoji" aria-hidden="true">🎓</span> Education</h2>
 
-        <article class="edu-entry">
-          <header class="edu-head">
-            <h3 class="edu-school">
-              <a href="https://www.gatech.edu/" target="_blank" rel="noopener">Georgia Institute of Technology</a>
-            </h3>
-          </header>
+        <div class="timeline">
+          <article class="timeline-row">
+            <a class="timeline-logo" href="https://www.gatech.edu/" target="_blank" rel="noopener" aria-label="Georgia Institute of Technology">
+              <img src="logos/gatech.webp" alt="" width="56" height="56" loading="lazy" />
+            </a>
+            <div class="timeline-content">
+              <header class="timeline-head">
+                <h3 class="timeline-title">Georgia Institute of Technology</h3>
+                <span class="timeline-date">May 2026 – Present</span>
+              </header>
+              <p class="timeline-subtitle">Special/Non-Degree Seeking Student</p>
+              <p class="timeline-text">
+                Continuing research after my M.S. Coursework: Modern Internet Research Methods, Introduction to Research Seminar.
+              </p>
+            </div>
+          </article>
 
-          <div class="edu-degree">
-            <header class="edu-degree-head">
-              <p class="edu-degree-title">Special/Non-Degree Seeking Student</p>
-              <span class="edu-date">May 2026 – Present</span>
-            </header>
-            <p class="edu-text">
-              Continuing research after my M.S. Coursework: Modern Internet Research Methods, Introduction to Research Seminar.
-            </p>
-          </div>
+          <article class="timeline-row">
+            <a class="timeline-logo" href="https://www.gatech.edu/" target="_blank" rel="noopener" aria-label="Georgia Institute of Technology">
+              <img src="logos/gatech.webp" alt="" width="56" height="56" loading="lazy" />
+            </a>
+            <div class="timeline-content">
+              <header class="timeline-head">
+                <h3 class="timeline-title">Georgia Institute of Technology</h3>
+                <span class="timeline-date">Jan 2024 – May 2026</span>
+              </header>
+              <p class="timeline-subtitle">M.S. in Computer Science (AI)</p>
+              <p class="timeline-text">
+                Completed the non-thesis track with a GPA of <strong>3.90 / 4.00</strong>. Coursework: Machine Learning, Deep Learning, Knowledge-Based AI, AI for Robotics, Game AI, ML for Trading, GPU Hardware &amp; Software, High Performance Computer Architecture, Network Science, Software Development Process.
+              </p>
+            </div>
+          </article>
 
-          <div class="edu-degree">
-            <header class="edu-degree-head">
-              <p class="edu-degree-title">M.S. in Computer Science (AI)</p>
-              <span class="edu-date">Jan 2024 – May 2026</span>
-            </header>
-            <p class="edu-text">
-              Completed the non-thesis track with a GPA of <strong>3.90 / 4.00</strong>. Coursework: Machine Learning, Deep Learning, Knowledge-Based AI, AI for Robotics, Game AI, ML for Trading, GPU Hardware &amp; Software, High Performance Computer Architecture, Network Science, Software Development Process.
-            </p>
-          </div>
-        </article>
-
-        <article class="edu-entry">
-          <header class="edu-head">
-            <h3 class="edu-school">
-              <a href="https://www.unud.ac.id/" target="_blank" rel="noopener">Udayana University</a>
-            </h3>
-          </header>
-
-          <div class="edu-degree">
-            <header class="edu-degree-head">
-              <p class="edu-degree-title">B.S. in Electrical Engineering (Robotics)</p>
-              <span class="edu-date">Jun 2018 – Oct 2022</span>
-            </header>
-            <p class="edu-text">
-              Head of the Robotics Club, managing 100+ members for the Indonesia Robot Contest. Graduated with a GPA of <strong>3.88 / 4.00</strong>, culminating in a thesis on Computer Vision and Neural Networks in Robotics.
-            </p>
-          </div>
-        </article>
+          <article class="timeline-row">
+            <a class="timeline-logo" href="https://www.unud.ac.id/" target="_blank" rel="noopener" aria-label="Udayana University">
+              <img src="logos/udayana.webp" alt="" width="56" height="56" loading="lazy" />
+            </a>
+            <div class="timeline-content">
+              <header class="timeline-head">
+                <h3 class="timeline-title">Udayana University</h3>
+                <span class="timeline-date">Jun 2018 – Oct 2022</span>
+              </header>
+              <p class="timeline-subtitle">B.S. in Electrical Engineering (Robotics)</p>
+              <p class="timeline-text">
+                Head of the Robotics Club, managing 100+ members for the Indonesia Robot Contest. Graduated with a GPA of <strong>3.88 / 4.00</strong>, culminating in a thesis on Computer Vision and Neural Networks in Robotics.
+              </p>
+            </div>
+          </article>
+        </div>
       </section>
 
       <section>
@@ -281,6 +1052,14 @@
           <p class="project-desc">
             Late-interaction retrieval for Indonesian. Comparing ColBERT, dense, sparse, and hybrid baselines on MIRACL-id and TyDi QA-id.
           </p>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">PyTorch</span>
+            <span class="tag">ColBERT</span>
+            <span class="tag">Pylate</span>
+            <span class="tag">XLM-RoBERTa</span>
+            <span class="tag">BGE-M3</span>
+          </div>
         </article>
 
         <article class="project">
@@ -290,6 +1069,12 @@
           <p class="project-desc">
             Evaluating how small LLMs handle misleading retrieved evidence in RAG pipelines.
           </p>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">LLMs</span>
+            <span class="tag">RAG</span>
+            <span class="tag">Evaluation</span>
+          </div>
         </article>
 
         <article class="project">
@@ -299,7 +1084,73 @@
           <p class="project-desc">
             User-simulation track participation for TREC 2026.
           </p>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">LLMs</span>
+            <span class="tag">TREC</span>
+            <span class="tag">Conversational Search</span>
+          </div>
         </article>
+      </section>
+
+      <section>
+        <h2 class="section-h"><span class="emoji" aria-hidden="true">🧰</span> Skills</h2>
+
+        <div class="skill-group">
+          <p class="skill-label">ML / AI</p>
+          <div class="tags">
+            <a class="tag" href="https://en.wikipedia.org/wiki/Large_language_model" target="_blank" rel="noopener">LLMs</a>
+            <a class="tag" href="https://en.wikipedia.org/wiki/Intelligent_agent" target="_blank" rel="noopener">Agentic AI (MCP)</a>
+            <a class="tag" href="https://en.wikipedia.org/wiki/Retrieval-augmented_generation" target="_blank" rel="noopener">RAG</a>
+            <a class="tag" href="https://en.wikipedia.org/wiki/Information_retrieval" target="_blank" rel="noopener">Information Retrieval</a>
+            <a class="tag" href="https://en.wikipedia.org/wiki/Recommender_system" target="_blank" rel="noopener">Recommender Systems</a>
+            <a class="tag" href="https://en.wikipedia.org/wiki/Learning_to_rank" target="_blank" rel="noopener">Two-tower retrieval</a>
+            <a class="tag" href="https://en.wikipedia.org/wiki/Transformer_(deep_learning_architecture)" target="_blank" rel="noopener">Transformers</a>
+            <a class="tag" href="https://en.wikipedia.org/wiki/Natural_language_processing" target="_blank" rel="noopener">NLP</a>
+            <a class="tag" href="https://en.wikipedia.org/wiki/Optical_character_recognition" target="_blank" rel="noopener">OCR</a>
+            <a class="tag" href="https://en.wikipedia.org/wiki/Computer_vision" target="_blank" rel="noopener">Computer Vision</a>
+            <a class="tag" href="https://en.wikipedia.org/wiki/Word_embedding" target="_blank" rel="noopener">Vector Search / Embeddings</a>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <p class="skill-label">Languages &amp; Frameworks</p>
+          <div class="tags">
+            <a class="tag" href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank" rel="noopener">Python</a>
+            <a class="tag" href="https://en.wikipedia.org/wiki/SQL" target="_blank" rel="noopener">SQL</a>
+            <a class="tag" href="https://en.wikipedia.org/wiki/C%2B%2B" target="_blank" rel="noopener">C / C++</a>
+            <a class="tag" href="https://en.wikipedia.org/wiki/C_Sharp_(programming_language)" target="_blank" rel="noopener">C# / .NET</a>
+            <a class="tag" href="https://en.wikipedia.org/wiki/PyTorch" target="_blank" rel="noopener">PyTorch</a>
+            <a class="tag" href="https://en.wikipedia.org/wiki/TensorFlow" target="_blank" rel="noopener">TensorFlow</a>
+            <a class="tag" href="https://en.wikipedia.org/wiki/Scikit-learn" target="_blank" rel="noopener">scikit-learn</a>
+            <a class="tag" href="https://en.wikipedia.org/wiki/LangChain" target="_blank" rel="noopener">LangChain</a>
+            <a class="tag" href="https://en.wikipedia.org/wiki/Hugging_Face" target="_blank" rel="noopener">Hugging Face</a>
+            <a class="tag" href="https://en.wikipedia.org/wiki/FastAPI" target="_blank" rel="noopener">FastAPI</a>
+            <a class="tag" href="https://en.wikipedia.org/wiki/Pandas_(software)" target="_blank" rel="noopener">Pandas</a>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <p class="skill-label">MLOps &amp; Cloud</p>
+          <div class="tags">
+            <a class="tag" href="https://en.wikipedia.org/wiki/CI/CD" target="_blank" rel="noopener">Azure CI/CD</a>
+            <a class="tag" href="https://en.wikipedia.org/wiki/MLOps" target="_blank" rel="noopener">MLOps</a>
+            <a class="tag" href="https://en.wikipedia.org/wiki/Apache_Airflow" target="_blank" rel="noopener">Airflow</a>
+            <a class="tag" href="https://en.wikipedia.org/wiki/Docker_(software)" target="_blank" rel="noopener">Docker</a>
+            <a class="tag" href="https://en.wikipedia.org/wiki/Kubernetes" target="_blank" rel="noopener">Kubernetes</a>
+            <a class="tag" href="https://en.wikipedia.org/wiki/Microsoft_Azure" target="_blank" rel="noopener">Azure</a>
+            <a class="tag" href="https://en.wikipedia.org/wiki/Amazon_Web_Services" target="_blank" rel="noopener">AWS</a>
+            <a class="tag" href="https://en.wikipedia.org/wiki/Google_Cloud_Platform" target="_blank" rel="noopener">GCP</a>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <p class="skill-label">Languages</p>
+          <div class="tags">
+            <a class="tag" href="https://en.wikipedia.org/wiki/Indonesian_language" target="_blank" rel="noopener">Indonesian (Native)</a>
+            <a class="tag" href="https://en.wikipedia.org/wiki/Common_European_Framework_of_Reference_for_Languages" target="_blank" rel="noopener">English (C1)</a>
+          </div>
+        </div>
       </section>
 
       <section id="collab">
@@ -313,90 +1164,137 @@
         </p>
       </section>
 
-      <section id="github-activity-section" hidden>
-        <h2 class="section-h"><span class="emoji" aria-hidden="true">🛠️</span> Recent Activity</h2>
-        <ul class="activity-list" id="github-activity"></ul>
-      </section>
     </main>
   </div>
+
+  <footer class="site-footer">
+    <p>© 2026 Yohanes Andre Setiawan · Last updated <time datetime="2026-05-26">26 May 2026</time></p>
+    <p class="footer-sub">Built with HTML, CSS, and a small bit of vanilla JS. <a href="https://github.com/andre44s/andre44s.github.io" target="_blank" rel="noopener">View source</a>.</p>
+  </footer>
 
   <script>
   (function () {
     var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    // ─── GitHub recent activity (latest 3 unique-repo push events) ───
-    // The public events feed no longer includes commit messages inline, so
-    // we resolve each push's head SHA via /repos/:repo/commits/:sha.
     (function () {
-      var list = document.getElementById('github-activity');
-      var section = document.getElementById('github-activity-section');
-      if (!list || !section) return;
+      if (reduceMotion) return;
+      var svg = document.querySelector('.banner-net');
+      if (!svg) return;
 
-      function escapeHtml(s) {
-        return String(s).replace(/[&<>"']/g, function (c) {
-          return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+      var W = 1000, H = 380;
+      var NODE_COUNT = 32;
+      var MAX_LINKS = 18;
+      var LINK_DIST = 180;
+      var SVG_NS = 'http://www.w3.org/2000/svg';
+      var ACCENT = getComputedStyle(document.documentElement).getPropertyValue('--accent').trim() || '#c97f4a';
+      var DIM = '#3a3a3a';
+
+      var nodes = [];
+      for (var i = 0; i < NODE_COUNT; i++) {
+        nodes.push({
+          x: Math.random() * W,
+          y: Math.random() * H,
+          vx: (Math.random() - 0.5) * 0.15,
+          vy: (Math.random() - 0.5) * 0.15,
+          r: 1.2 + Math.random() * 1.6,
+          accent: Math.random() < 0.15
         });
       }
 
-      function timeAgo(date) {
-        var diff = (new Date() - new Date(date)) / 1000;
-        if (diff < 60) return 'just now';
-        if (diff < 3600) return Math.floor(diff / 60) + 'm ago';
-        if (diff < 86400) return Math.floor(diff / 3600) + 'h ago';
-        if (diff < 604800) return Math.floor(diff / 86400) + 'd ago';
-        if (diff < 2592000) return Math.floor(diff / 604800) + 'w ago';
-        return Math.floor(diff / 2592000) + 'mo ago';
+      var linkLayer = document.createElementNS(SVG_NS, 'g');
+      svg.appendChild(linkLayer);
+
+      var nodeEls = nodes.map(function (n) {
+        var c = document.createElementNS(SVG_NS, 'circle');
+        c.setAttribute('r', n.r);
+        c.setAttribute('fill', n.accent ? ACCENT : '#888');
+        c.setAttribute('opacity', n.accent ? 0.85 : 0.55);
+        svg.appendChild(c);
+        return c;
+      });
+
+      var activeLinks = [];
+
+      function dist(a, b) {
+        var dx = a.x - b.x, dy = a.y - b.y;
+        return Math.sqrt(dx * dx + dy * dy);
       }
 
-      fetch('https://api.github.com/users/andre44s/events/public?per_page=20')
-        .then(function (r) { if (!r.ok) throw new Error('gh'); return r.json(); })
-        .then(function (events) {
-          var seen = {};
-          var pushes = [];
-          for (var i = 0; i < events.length && pushes.length < 3; i++) {
-            var e = events[i];
-            if (e.type !== 'PushEvent') continue;
-            if (seen[e.repo.name]) continue;
-            seen[e.repo.name] = true;
-            pushes.push({ repo: e.repo.name, sha: e.payload.head, date: e.created_at });
+      function spawnLink() {
+        if (activeLinks.length >= MAX_LINKS) return;
+        for (var tries = 0; tries < 20; tries++) {
+          var ai = Math.floor(Math.random() * NODE_COUNT);
+          var bi = Math.floor(Math.random() * NODE_COUNT);
+          if (ai === bi) continue;
+          var dup = false;
+          for (var k = 0; k < activeLinks.length; k++) {
+            var l = activeLinks[k];
+            if ((l.a === ai && l.b === bi) || (l.a === bi && l.b === ai)) { dup = true; break; }
           }
-          if (!pushes.length) return;
+          if (dup) continue;
+          var d = dist(nodes[ai], nodes[bi]);
+          if (d > LINK_DIST) continue;
+          var line = document.createElementNS(SVG_NS, 'line');
+          var useAccent = nodes[ai].accent || nodes[bi].accent;
+          line.setAttribute('stroke', useAccent ? ACCENT : DIM);
+          line.setAttribute('stroke-width', useAccent ? 0.7 : 0.5);
+          line.setAttribute('opacity', 0);
+          linkLayer.appendChild(line);
+          activeLinks.push({ a: ai, b: bi, el: line, birth: performance.now(), life: 3000 + Math.random() * 4000 });
+          return;
+        }
+      }
 
-          return Promise.all(pushes.map(function (p) {
-            return fetch('https://api.github.com/repos/' + p.repo + '/commits/' + p.sha)
-              .then(function (r) { return r.ok ? r.json() : null; })
-              .then(function (commit) {
-                return {
-                  repo: p.repo,
-                  sha: p.sha,
-                  date: p.date,
-                  message: commit && commit.commit ? commit.commit.message.split('\n')[0] : null
-                };
-              })
-              .catch(function () { return { repo: p.repo, sha: p.sha, date: p.date, message: null }; });
-          }));
-        })
-        .then(function (commits) {
-          if (!commits || !commits.length) return;
-          list.innerHTML = commits.map(function (c) {
-            var shortRepo = c.repo.replace(/^andre44s\//, '');
-            var msg = c.message || 'push to main';
-            if (msg.length > 90) msg = msg.slice(0, 87) + '…';
-            return '<li>' +
-              '<a href="https://github.com/' + c.repo + '/commit/' + c.sha +
-              '" target="_blank" rel="noopener">' +
-                '<span class="activity-repo">' + escapeHtml(shortRepo) + '</span>' +
-                '<span class="activity-msg">' + escapeHtml(msg) + '</span>' +
-                '<span class="activity-time">' + timeAgo(c.date) + '</span>' +
-              '</a>' +
-            '</li>';
-          }).join('');
-          section.hidden = false;
-        })
-        .catch(function () { /* silently hide on rate-limit/error */ });
+      function tick(t) {
+        for (var i = 0; i < NODE_COUNT; i++) {
+          var n = nodes[i];
+          n.x += n.vx; n.y += n.vy;
+          if (n.x < 0 || n.x > W) n.vx *= -1;
+          if (n.y < 0 || n.y > H) n.vy *= -1;
+          nodeEls[i].setAttribute('cx', n.x);
+          nodeEls[i].setAttribute('cy', n.y);
+        }
+
+        var alive = [];
+        for (var j = 0; j < activeLinks.length; j++) {
+          var lk = activeLinks[j];
+          var age = t - lk.birth;
+          var frac = age / lk.life;
+          if (frac >= 1) { lk.el.remove(); continue; }
+          var op;
+          if (frac < 0.25) op = frac / 0.25;
+          else if (frac < 0.7) op = 1;
+          else op = (1 - frac) / 0.3;
+          var a = nodes[lk.a], b = nodes[lk.b];
+          lk.el.setAttribute('x1', a.x); lk.el.setAttribute('y1', a.y);
+          lk.el.setAttribute('x2', b.x); lk.el.setAttribute('y2', b.y);
+          lk.el.setAttribute('opacity', op * 0.35);
+          alive.push(lk);
+        }
+        activeLinks = alive;
+
+        requestAnimationFrame(tick);
+      }
+
+      setInterval(spawnLink, 350);
+      for (var s = 0; s < 8; s++) spawnLink();
+      requestAnimationFrame(tick);
+
+      var banner = document.querySelector('.banner');
+      var ticking = false;
+      window.addEventListener('scroll', function () {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(function () {
+          var y = window.scrollY;
+          if (y < banner.offsetHeight) {
+            svg.style.transform = 'translateY(' + (y * 0.4) + 'px)';
+          }
+          ticking = false;
+        });
+      }, { passive: true });
     })();
 
-    // ─── Typing animation in banner tagline ───
     (function () {
       var el = document.querySelector('.role-text');
       if (!el) return;
