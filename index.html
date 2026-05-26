@@ -102,7 +102,7 @@
     --bg-soft: #222222;
     --text: #d4d4d4;
     --text-strong: #ededed;
-    --text-muted: #888888;
+    --text-muted: #a8a8a8;
     --accent: #7896c6;
     --accent-hover: #93accb;
     --rule: #2a2a2a;
@@ -131,6 +131,11 @@
     transition: color 0.15s ease;
   }
   a:hover { color: var(--accent-hover); text-decoration: underline; }
+  main p a {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
   a:focus-visible {
     outline: 2px solid var(--accent);
     outline-offset: 3px;
@@ -819,7 +824,7 @@
     margin-top: 24px;
   }
   .site-footer p { margin: 0 0 4px; }
-  .site-footer .footer-sub { font-size: 0.78rem; opacity: 0.75; }
+  .site-footer .footer-sub { font-size: 0.78rem; }
   .site-footer a { color: var(--text-muted); }
   .site-footer a:hover { color: var(--accent); }
   
@@ -842,7 +847,7 @@
         <span class="banner-sep">·</span>
         <span class="banner-sub">bridging research and production in retrieval, RAG, and agentic AI</span>
       </p>
-      <a class="banner-cta" href="cv.pdf" download>↓ Download CV</a>
+      <a class="banner-cta" href="Yohanes-Andre-Setiawan-CV-2026.pdf" download>↓ Download CV</a>
     </div>
     <a class="banner-chevron" href="#main" aria-label="Scroll to content">↓</a>
   </header>
@@ -891,7 +896,7 @@
           </a>
         </li>
         <li>
-          <a href="cv.pdf" download>
+          <a href="Yohanes-Andre-Setiawan-CV-2026.pdf" download>
             <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><polyline points="14 2 14 8 20 8"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg></span>
             <span>CV</span>
           </a>

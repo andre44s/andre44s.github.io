@@ -12,7 +12,7 @@
   --bg-soft: #222222;
   --text: #d4d4d4;
   --text-strong: #ededed;
-  --text-muted: #888888;
+  --text-muted: #a8a8a8;
   --accent: #7896c6;
   --accent-hover: #93accb;
   --rule: #2a2a2a;
@@ -41,6 +41,12 @@ a {
   transition: color 0.15s ease;
 }
 a:hover { color: var(--accent-hover); text-decoration: underline; }
+
+main p a {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
 a:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
@@ -729,7 +735,7 @@ section:last-child p {
   margin-top: 24px;
 }
 .site-footer p { margin: 0 0 4px; }
-.site-footer .footer-sub { font-size: 0.78rem; opacity: 0.75; }
+.site-footer .footer-sub { font-size: 0.78rem; }
 .site-footer a { color: var(--text-muted); }
 .site-footer a:hover { color: var(--accent); }
 
