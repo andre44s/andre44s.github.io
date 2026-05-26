@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://andre44s.dev/sitemap.xml
