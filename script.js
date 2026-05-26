@@ -39,6 +39,9 @@
     });
 
     var activeLinks = [];
+    var running = true;
+    var bannerVisible = true;
+    var spawnInterval;
 
     function dist(a, b) {
       var dx = a.x - b.x, dy = a.y - b.y;
@@ -98,14 +101,37 @@
       }
       activeLinks = alive;
 
-      requestAnimationFrame(tick);
+      if (running) requestAnimationFrame(tick);
     }
 
-    setInterval(spawnLink, 350);
+    function updateRunningState() {
+      var shouldRun = !document.hidden && bannerVisible;
+      if (shouldRun && !running) {
+        running = true;
+        spawnInterval = setInterval(spawnLink, 350);
+        requestAnimationFrame(tick);
+      } else if (!shouldRun && running) {
+        running = false;
+        clearInterval(spawnInterval);
+      }
+    }
+
+    spawnInterval = setInterval(spawnLink, 350);
     for (var s = 0; s < 8; s++) spawnLink();
     requestAnimationFrame(tick);
 
     var banner = document.querySelector('.banner');
+
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        bannerVisible = entries[0].isIntersecting;
+        updateRunningState();
+      }, { threshold: 0 });
+      io.observe(banner);
+    }
+
+    document.addEventListener('visibilitychange', updateRunningState);
+
     var ticking = false;
     window.addEventListener('scroll', function () {
       if (ticking) return;

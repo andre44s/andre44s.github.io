@@ -698,10 +698,13 @@ section:last-child p {
   .affiliations { font-size: 0.84rem; margin-bottom: 18px; }
 
   .contact {
+    flex-direction: column;
+    align-items: stretch;
     padding-top: 16px;
     font-size: 0.85rem;
   }
-  .contact li { padding: 7px 12px; }
+  .contact li { padding: 0; }
+  .contact a { justify-content: center; padding: 9px 16px; }
 
   .section-h { font-size: 1.08rem; }
 
