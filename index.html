@@ -558,6 +558,37 @@
   
   .project-desc { margin-bottom: 8px; }
   .project .tags { margin-top: 4px; }
+
+  .pub {
+    display: grid;
+    grid-template-columns: 156px 1fr;
+    gap: 18px;
+    align-items: start;
+    margin-bottom: 18px;
+  }
+  .pub-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 64px;
+    padding: 8px;
+    background: #fff;
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+  }
+  .pub-logo img { max-width: 100%; height: auto; }
+  .pub-logo-text {
+    color: #b31b1b;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .pub-logo-text:hover { text-decoration: none; }
+  @media (max-width: 600px) {
+    .pub { grid-template-columns: 1fr; gap: 10px; }
+    .pub-logo { width: 156px; }
+  }
   
   .skill-hint {
     margin: 0 0 16px;
@@ -925,10 +956,64 @@
         <h2 class="section-h"><span class="emoji" aria-hidden="true">🔥</span> News</h2>
         <ul class="news">
           <li>
+            <span class="date">Nov 2026</span>
+            <span class="body">🎤 Presenting at the TREC 2026 User Simulation workshop on 18 Nov.</span>
+          </li>
+          <li>
+            <span class="date">Nov 2026</span>
+            <span class="body">📄 My paper on RAG abstention under misleading context is out in the AACL-IJCNLP 2026 proceedings.</span>
+          </li>
+          <li>
+            <span class="date">Sep 2026</span>
+            <span class="body">🎉 Paper accepted to the AACL-IJCNLP 2026 Main Conference.</span>
+          </li>
+          <li>
             <span class="date">May 2026</span>
             <span class="body">🎓 Graduated with my M.S. in Computer Science (AI) from Georgia Tech. Continuing on as a Special/Non-Degree Seeking Student to keep doing research.</span>
           </li>
         </ul>
+      </section>
+
+      <section>
+        <h2 class="section-h"><span class="emoji" aria-hidden="true">📚</span> Publications</h2>
+
+        <article class="pub">
+          <a class="pub-logo" href="https://2026.aaclnet.org/" target="_blank" rel="noopener" aria-label="AACL-IJCNLP 2026">
+            <img src="logos/aacl-ijcnlp-2026.webp" alt="" width="140" height="48" loading="lazy" />
+          </a>
+          <div class="project">
+            <h3 class="project-title">
+              <a href="https://aclanthology.org/2026.aacl-long.153/" target="_blank" rel="noopener">Prompt-Based Abstention Fails Under Misleading Context: A Controlled Study of Small Frozen RAG Models</a>
+            </h3>
+            <p class="project-desc">
+              <strong>Yohanes Andre Setiawan</strong>. AACL-IJCNLP 2026 (Main Conference).
+            </p>
+            <div class="tags">
+              <a class="tag" href="https://aclanthology.org/2026.aacl-long.153.pdf" target="_blank" rel="noopener">PDF</a>
+              <a class="tag" href="https://arxiv.org/abs/2608.22228" target="_blank" rel="noopener">arXiv</a>
+              <a class="tag" href="https://github.com/andre44s/grab-rag" target="_blank" rel="noopener">Code</a>
+              <a class="tag" href="papers/grab-rag/slides.pdf" target="_blank" rel="noopener">Slides</a>
+              <a class="tag" href="papers/grab-rag/poster.pdf" target="_blank" rel="noopener">Poster</a>
+              <a class="tag" href="papers/grab-rag/video.mp4" target="_blank" rel="noopener">Video</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="pub">
+          <a class="pub-logo pub-logo-text" href="https://arxiv.org/abs/2610.04888" target="_blank" rel="noopener" aria-label="arXiv">arXiv</a>
+          <div class="project">
+            <h3 class="project-title">
+              <a href="https://arxiv.org/abs/2610.04888" target="_blank" rel="noopener">No Hindsight for LLM Fact-Checkers: Measuring Leakage Channels in Misinformation Detection</a>
+            </h3>
+            <p class="project-desc">
+              Kuan-Hua Wu Lu*, <strong>Yohanes Andre Setiawan</strong>*. Preprint, 2026. *Equal contribution.
+            </p>
+            <div class="tags">
+              <a class="tag" href="https://arxiv.org/pdf/2610.04888" target="_blank" rel="noopener">PDF</a>
+              <a class="tag" href="https://arxiv.org/abs/2610.04888" target="_blank" rel="noopener">arXiv</a>
+            </div>
+          </div>
+        </article>
       </section>
 
       <section>
@@ -946,11 +1031,11 @@
               </header>
               <p class="timeline-subtitle">Senior AI Engineer</p>
               <ul class="timeline-bullets">
-                <li>Engineer an LLM-powered RAG system (vector search + retrieval) for semantic search over product docs to replace keyword search.</li>
-                <li>Develop an MCP-based agent to automate multi-step workflows and reduce manual effort.</li>
-                <li>Design a multi-agent system that generates proprietary code to accelerate the SDLC.</li>
-                <li>Architect Azure CI/CD and MLOps for deployment/inference of AI services in production.</li>
-                <li>Integrate AI services into C#/.NET and REST APIs for production use.</li>
+                <li>Build and own MineScape's AI assistant, a production tool-calling agent with multimodal RAG over 250,000+ documents, web search, and in-app task execution.</li>
+                <li>Design agentic workflows where specialist sub-agents plan multi-step tasks, generate and verify code, and process user files.</li>
+                <li>Build guardrail and evaluation suites that test AI systems for prompt injection, PII leakage, unsafe output, and multilingual reliability.</li>
+                <li>Own and secure the Azure infrastructure for AI services, covering MLOps, CI/CD, Terraform, Docker, authentication, and endpoint hardening.</li>
+                <li>Ship voice interaction (speech-to-text, text-to-speech, GPT Realtime) so users can talk to the assistant instead of typing.</li>
               </ul>
             </div>
           </article>
@@ -1047,25 +1132,6 @@
             </div>
           </article>
         </div>
-      </section>
-
-      <section>
-        <h2 class="section-h"><span class="emoji" aria-hidden="true">🚀</span> Projects</h2>
-
-        <article class="project">
-          <h3 class="project-title">
-            <a href="https://github.com/andre44s/trec-usersim-2026" target="_blank" rel="noopener">trec-usersim-2026</a>
-          </h3>
-          <p class="project-desc">
-            User-simulation track participation for TREC 2026.
-          </p>
-          <div class="tags">
-            <span class="tag">Python</span>
-            <span class="tag">LLMs</span>
-            <span class="tag">TREC</span>
-            <span class="tag">Conversational Search</span>
-          </div>
-        </article>
       </section>
 
       <section>
